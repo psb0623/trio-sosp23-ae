@@ -199,20 +199,20 @@ $ sudo ./sharing-cost.sh
 **1. Hardware setup**: 
 * Please disable hyperthreading in the BIOS to avoid issues due to CPU pinning before running experiments. 
 
-**2. How to find a result**
+**2. How to check results**
 
 - `single-thread.sh`: run `eval/fig/fig3.py` to draw a figure (raw data are in `eval/data/sg_meta`)
-  - Compare: Generated figure with Figure 3 in the paper.  
+  - Compare: Generated figure (`fig3.pdf`) with Figure 3 in the paper.  
     - ArckFS+ and ArckFS perform better than other secure file systems.  
     - Similar to the paper’s figure, ArckFS+ performs slightly worse than ArckFS. 
 - `fxmark.sh`: run `eval/fig/fig4.py` to draw a figure. (raw data are in `eval/data/fxmark`)
-  - Compare: Generated figure with Figure 4 in the paper.  
+  - Compare: Generated figure (`fig4.pdf`) with Figure 4 in the paper.  
     - ArckFS+ and ArckFS perform better than other secure file systems.  
     - Similar to the paper’s figure, ArckFS+ generally performs comparably to ArckFS but slightly worse in some workloads.
 - `filebench-shared.sh`: check csv files in `eval/data/filebench-shared`.
   - Expected result: ArckFS+ perform comparable with ArckFS.
   - Relavant text in the paper: "ArckFS+ delivers performance comparable to ArckFS, with relative throughput of 101.1% and 102.1% for a single thread, and 97.1% and 98.8% for 16 threads on the Webproxy and Varmail workloads, respectively."
-- `sharing-cost.sh`: run `eval/fig/table4.py` to draw a table. (raw data are in `eval/data/sharing-cost`)
+- `sharing-cost.sh`: run `eval/fig/table4.py` to draw a table (`table4.md`). (raw data are in `eval/data/sharing-cost`)
   - Expected result: tgroup (trust group) results are better than without tgroup, as described in Section 5.4 of the paper. (tgroup results are better than NOVA)
   - Relavant text in the paper: "Concurrent write access to a shared inode incurs a sharing cost for ArckFS+. To reduce this cost, a user can use a trust group, where multiple applications share inodes within the group without verification,"
   - Note: Higher values are better for the top two rows, while lower values are better for the bottom two rows.
