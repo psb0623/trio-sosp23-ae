@@ -146,7 +146,7 @@ $ ./splitfs.sh
 ```
 This script will install SplitFS.
 
-### 4. Install ArckFS and ArckFS+
+### 4. Install ArckFS, ArckFS+ and FxMark 
 
 #### 4.1 ArckFS
 
@@ -163,16 +163,18 @@ $ cd arckfsplus
 $ ./compile.sh
 ```
 
-### 5. Compile and install benchmarks 
-
-**5.1 Fxmark**
+#### 4.3 Fxmark
 
 ```
 $ cd eval/benchmark/fxmark
 $ ./compile.sh
 ```
 
-# Running Experiments:
+**Hardware setup**: 
+* Please disable hyperthreading in the BIOS to avoid issues due to CPU pinning before running experiments. 
+
+
+### 5. Running Experiments
 
 Main scripts are under ```eval/scripts/```.
 
@@ -188,16 +190,18 @@ eval/scripts
 |---- parse.sh                  (parse and output the results to directory: eval/data)
 ```
 
-Run experiments.
+You can use `run-all.sh` for all four experiments. It takes about 12 hours in our machine.
+```
+$ sudo ./run-all.sh
+```
+
+If some experiments fails, you can run each experiment as follows.
 ``` 
 $ sudo ./single-thread.sh
 $ sudo ./fxmark.sh
 $ sudo ./filebench-shared.sh
 $ sudo ./sharing-cost.sh
 ```
-
-**1. Hardware setup**: 
-* Please disable hyperthreading in the BIOS to avoid issues due to CPU pinning before running experiments. 
 
 **2. How to check results**
 
