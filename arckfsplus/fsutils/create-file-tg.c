@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
     dir = argv[1];
     repeat = strtol(argv[2], NULL, 10);
 
-    for (i = 0; i < repeat; i++)
+    for (i = 1; i <= repeat; i++)
     {
         snprintf(path, MAX_PATH, "%s/%d", dir, i);
 
